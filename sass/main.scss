@@ -1,0 +1,17 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+  grid-column: 2 / span 10;
+}
+
+// .attribution {
+//   font-size: 11px;
+//   text-align: center;
+// }
+
+// .attribution a {
+//   color: hsl(228, 45%, 44%);
+// }
