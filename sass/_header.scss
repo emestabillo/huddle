@@ -3,4 +3,16 @@ header {
   padding: 2rem 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.cta {
+  border-radius: 2.5rem;
+  &--header {
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    background: #fff;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+  }
 }

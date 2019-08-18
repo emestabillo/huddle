@@ -1,4 +1,17 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
 body {
+  font-family: "Poppins", sans-serif; }
+
+.container {
   display: grid;
   grid-template-columns: repeat(12, 1fr); }
 
@@ -6,4 +19,14 @@ header {
   grid-column: 2 / span 10;
   padding: 2rem 0;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
+
+.cta {
+  border-radius: 2.5rem; }
+  .cta--header {
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    background: #fff;
+    color: #ff52bf;
+    border: 1px solid #ff52bf; }
