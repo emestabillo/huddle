@@ -1,11 +1,5 @@
-body {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
-
-header {
-  grid-column: 2 / span 10;
-}
+@import "base";
+@import "header";
 
 // .attribution {
 //   font-size: 11px;

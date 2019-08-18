@@ -1,0 +1,29 @@
+// COLOR VARIABLES
+$color-primary: hsl(322, 100%, 66%);
+$color-cyan: hsl(192, 100%, 9%);
+$color-paleblue: hsl(207, 100%, 98%);
+
+// FONT VARIABLES
+$font-heading: "Open Sans", sans-serif;
+$font-body: "Poppins", sans-serif;
+
+// BREAKPOINTS
+$bp-mobile: 375px;
+$bp-desktop: 1440px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
