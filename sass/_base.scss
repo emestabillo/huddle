@@ -2,10 +2,11 @@
 $color-primary: hsl(322, 100%, 66%);
 $color-cyan: hsl(192, 100%, 9%);
 $color-paleblue: hsl(207, 100%, 98%);
+$color-white: #fff;
 
 // FONT VARIABLES
-$font-heading: "Open Sans", sans-serif;
-$font-body: "Poppins", sans-serif;
+$font-body: "Open Sans", sans-serif;
+$font-heading: "Poppins", sans-serif;
 
 // BREAKPOINTS
 $bp-mobile: 375px;
@@ -30,4 +31,27 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: min-content 70vh repeat(3, min-content);
+  // grid-template-rows: min-content 40vw repeat(3, min-content);
+}
+
+.cta {
+  border-radius: 2.5rem;
+  box-shadow: 0px 3px 15px rgba(255, 82, 186, 0.2);
+  border: 1px solid $color-primary;
+  &--header {
+    padding: 0.5rem 2rem;
+    background: $color-white;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+  }
+  &--banner {
+    color: $color-white;
+    background: $color-primary;
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+    width: 20rem;
+    height: 3rem;
+    justify-self: center;
+  }
 }

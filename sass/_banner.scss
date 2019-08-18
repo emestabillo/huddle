@@ -1,0 +1,25 @@
+.banner {
+  grid-column: 4 / span 6;
+  text-align: center;
+  padding-top: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  grid-row-gap: 2.5rem;
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 2rem;
+    padding-top: 2.5rem;
+  }
+  &__subtitle {
+    grid-column: 2 / span 5;
+    padding: 0 1rem;
+    font-family: $font-body;
+    font-weight: 400;
+  }
+  .cta {
+    grid-column: 3 / span 3;
+  }
+}

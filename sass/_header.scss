@@ -1,18 +1,22 @@
 header {
-  grid-column: 2 / span 10;
-  padding: 2rem 0;
+  grid-column: 3 / span 8;
+  padding: 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.cta {
-  border-radius: 2.5rem;
-  &--header {
-    padding: 0.5rem 2rem;
-    margin-top: 1rem;
-    background: #fff;
-    color: $color-primary;
-    border: 1px solid $color-primary;
+  img {
+    height: 2rem;
   }
 }
+
+// .cta {
+//   border-radius: 2.5rem;
+//   box-shadow: 0px 3px 15px rgba(255, 82, 186, 0.2);
+//   &--header {
+//     padding: 0.5rem 2rem;
+//     margin-top: 1rem;
+//     background: #fff;
+//     color: $color-primary;
+//     border: 1px solid $color-primary;
+//   }
+// }
