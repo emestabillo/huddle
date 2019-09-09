@@ -13,13 +13,46 @@
     font-size: 2rem;
     padding-top: 2.5rem;
   }
+
   &__subtitle {
     grid-column: 2 / span 5;
     padding: 0 1rem;
     font-family: $font-body;
     font-weight: 400;
   }
+
   .cta {
     grid-column: 3 / span 3;
+  }
+}
+
+.images {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.screen-img {
+  grid-column: 3 / span 8;
+  padding-bottom: 8rem;
+}
+
+.stats {
+  grid-column: 1/-1;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+  &__info {
+    display: grid;
+    grid-template-rows: 2rem 5rem 2rem;
+    grid-gap: 1rem;
+    justify-self: center;
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      text-align: center;
+    }
   }
 }

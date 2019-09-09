@@ -14,7 +14,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: min-content 70vh repeat(3, min-content); }
+  grid-template-rows: 7rem 33rem min-content 25rem repeat(4, min-content) 15rem; }
 
 .cta {
   border-radius: 2.5rem;
@@ -35,7 +35,7 @@ body {
     justify-self: center; }
 
 header {
-  grid-column: 3 / span 8;
+  grid-column: 2 / span 10;
   padding: 3rem 0;
   display: flex;
   justify-content: space-between;
@@ -62,3 +62,26 @@ header {
     font-weight: 400; }
   .banner .cta {
     grid-column: 3 / span 3; }
+
+.images {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+.screen-img {
+  grid-column: 3 / span 8;
+  padding-bottom: 8rem; }
+
+.stats {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+  .stats__info {
+    display: grid;
+    grid-template-rows: 2rem 5rem 2rem;
+    grid-gap: 1rem;
+    justify-self: center; }
+    .stats__info h1 {
+      font-size: 4rem; }
+    .stats__info p {
+      text-align: center; }
