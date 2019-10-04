@@ -74,6 +74,7 @@ header {
 
 .stats {
   grid-column: 1/-1;
+  padding: 0 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
   .stats__info {
@@ -85,3 +86,6 @@ header {
       font-size: 4rem; }
     .stats__info p {
       text-align: center; }
+  @media screen and (max-width: 862px) {
+    .stats {
+      grid-gap: 5rem; } }
