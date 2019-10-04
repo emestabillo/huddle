@@ -14,7 +14,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 25rem repeat(4, min-content) 15rem; }
+  grid-template-rows: 7rem 33rem min-content 20rem 140rem min-content 15rem; }
 
 .cta {
   border-radius: 2.5rem;
@@ -74,7 +74,6 @@ header {
 
 .stats {
   grid-column: 1/-1;
-  padding: 0 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
   .stats__info {
@@ -89,3 +88,29 @@ header {
   @media screen and (max-width: 862px) {
     .stats {
       grid-gap: 5rem; } }
+
+.people {
+  grid-column: 1 / -1;
+  padding: 8rem 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); }
+  .people .text {
+    grid-area: text; }
+  .people img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    grid-area: image; }
+  .people__grow, .people__users {
+    background: #f5faff;
+    grid-template-areas: "text image"; }
+    .people__grow .text, .people__users .text {
+      grid-column: 2 / 6; }
+    .people__grow img, .people__users img {
+      grid-column: 6 / 12; }
+  .people__conversations {
+    grid-template-areas: "image text"; }
+    .people__conversations .text {
+      grid-column: 6 / 12; }
+    .people__conversations img {
+      grid-column: 2 / 6; }

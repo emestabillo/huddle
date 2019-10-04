@@ -1,18 +1,43 @@
 .people {
+  grid-column: 1 / -1;
+  padding: 8rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
   .text {
+    grid-area: text;
   }
+
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    grid-area: image;
   }
 
-  &__grow {
+  &__grow,
+  &__users {
+    background: $color-paleblue;
+    grid-template-areas: "text image";
+
+    .text {
+      grid-column: 2 / 6;
+    }
+
+    img {
+      grid-column: 6 / 12;
+    }
   }
 
   &__conversations {
-  }
+    grid-template-areas: "image text";
+    .text {
+      grid-column: 6 / 12;
+    }
 
-  &__users {
+    img {
+      grid-column: 2 / 6;
+    }
   }
 }
