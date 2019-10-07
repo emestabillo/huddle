@@ -1,5 +1,5 @@
 .banner {
-  grid-column: 4 / span 6;
+  grid-column: 3 / span 8;
   text-align: center;
   padding-top: 3rem;
 
@@ -16,7 +16,7 @@
 
   &__subtitle {
     grid-column: 2 / span 5;
-    padding: 0 1rem;
+    padding: 0 2rem;
     font-family: $font-body;
     font-weight: 400;
   }
@@ -39,7 +39,6 @@
 
 .stats {
   grid-column: 1/-1;
-  // padding: 0 6rem 6rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
