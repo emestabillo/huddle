@@ -125,3 +125,8 @@ header {
     .action .signup h1 {
       font-size: 2rem;
       padding-bottom: 2.5rem; }
+
+footer {
+  grid-column: 1/-1;
+  color: #ffffff;
+  background: #00252e; }
