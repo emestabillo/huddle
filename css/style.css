@@ -9,7 +9,8 @@ html {
   box-sizing: border-box; }
 
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem; }
 
 .container {
   display: grid;
@@ -85,6 +86,9 @@ header {
       font-size: 4rem; }
     .stats__info p {
       text-align: center; }
+  @media screen and (min-width: 720px) {
+    .stats .messages {
+      transform: translateX(-7rem); } }
   @media screen and (max-width: 862px) {
     .stats {
       grid-gap: 5rem; } }
@@ -130,3 +134,5 @@ footer {
   grid-column: 1/-1;
   color: #ffffff;
   background: #00252e; }
+  footer__logo {
+    filter: grayscale(1) brightness(0) invert(1); }
