@@ -77,13 +77,25 @@ header {
   }
 }
 
-.people {
+.peoples {
   grid-column: 1 / -1;
-  padding: 8rem 0;
+  top: 8rem;
+  position: relative;
 
+  &::before {
+    background: url(../images/bg-section-top-desktop-1.svg);
+    position: absolute;
+    content: "";
+    height: 139px;
+    width: 100%;
+    top: -8rem;
+  }
+}
+
+.people {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-
+  padding: 8rem 0;
   .text {
     grid-area: text;
   }
@@ -108,6 +120,18 @@ header {
       grid-column: 6 / 12;
     }
   }
+
+  // &__grow {
+  //   position: relative;
+
+  //   &::before {
+  //     background-image: url(../images/bg-section-top-desktop-1.svg);
+  //     position: absolute;
+  //     content: "";
+  //     height: 139px;
+  //     width: 1440px;
+  //   }
+  // }
 
   &__conversations {
     grid-template-areas: "image text";

@@ -93,11 +93,22 @@ header {
     .stats {
       grid-gap: 5rem; } }
 
-.people {
+.peoples {
   grid-column: 1 / -1;
-  padding: 8rem 0;
+  top: 8rem;
+  position: relative; }
+  .peoples::before {
+    background: url(../images/bg-section-top-desktop-1.svg);
+    position: absolute;
+    content: "";
+    height: 139px;
+    width: 100%;
+    top: -8rem; }
+
+.people {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); }
+  grid-template-columns: repeat(12, 1fr);
+  padding: 8rem 0; }
   .people .text {
     grid-area: text; }
   .people img {
