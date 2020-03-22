@@ -26,13 +26,13 @@ html {
 
 body {
   font-family: $font-body;
-  font-size: 1.2rem;
+  font-size: 120%; //19.2px = 1rem
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 20rem 140rem min-content 15rem;
+  grid-template-rows: 7rem 33rem min-content 20rem 156rem 30rem 15rem;
 }
 
 .cta {

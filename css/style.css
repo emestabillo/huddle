@@ -10,12 +10,12 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem; }
+  font-size: 120%; }
 
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 20rem 140rem min-content 15rem; }
+  grid-template-rows: 7rem 33rem min-content 20rem 156rem 30rem 15rem; }
 
 .cta {
   border-radius: 2.5rem;
@@ -107,21 +107,52 @@ header {
     grid-area: image; }
   .people__grow, .people__users {
     background: #f5faff;
-    grid-template-areas: "text image"; }
+    grid-template-areas: "text image";
+    position: relative; }
     .people__grow .text, .people__users .text {
-      grid-column: 2 / 6; }
+      grid-column: 2 / 7; }
     .people__grow img, .people__users img {
-      grid-column: 6 / 12; }
+      grid-column: 8 / 12; }
+  .people__grow::before {
+    position: absolute;
+    content: "";
+    background: url(../images/bg-section-top-desktop-1.svg);
+    height: 165px;
+    width: 100%;
+    top: -8rem; }
+  .people__grow::after {
+    position: absolute;
+    content: "";
+    background: url(../images/bg-section-bottom-desktop-1.svg);
+    height: 139px;
+    width: 100%;
+    bottom: -8rem; }
   .people__conversations {
-    grid-template-areas: "image text"; }
-    .people__conversations .text {
-      grid-column: 6 / 12; }
+    grid-template-areas: "image text";
+    padding: 16rem 0; }
     .people__conversations img {
-      grid-column: 2 / 6; }
+      grid-column: 2 / 7; }
+    .people__conversations .text {
+      grid-column: 8 / 12; }
+  .people__users::before {
+    position: absolute;
+    content: "";
+    background: url(../images/bg-section-top-desktop-2.svg);
+    height: 156px;
+    width: 100%;
+    top: -8rem; }
+  .people__users::after {
+    position: absolute;
+    content: "";
+    background: url(../images/bg-section-bottom-desktop-2.svg);
+    height: 139px;
+    width: 100%;
+    bottom: -8rem; }
 
 .action {
   grid-column: 4 / 10; }
   .action .signup {
+    padding: 9rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,6 +164,7 @@ header {
 footer {
   grid-column: 1/-1;
   color: #ffffff;
-  background: #00252e; }
+  background: #00252e;
+  display: flex; }
   footer__logo {
     filter: grayscale(1) brightness(0) invert(1); }

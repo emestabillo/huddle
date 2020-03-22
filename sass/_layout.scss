@@ -99,24 +99,65 @@ header {
   &__users {
     background: $color-paleblue;
     grid-template-areas: "text image";
+    position: relative;
 
     .text {
-      grid-column: 2 / 6;
+      grid-column: 2 / 7;
     }
 
     img {
-      grid-column: 6 / 12;
+      grid-column: 8 / 12;
+    }
+  }
+
+  &__grow {
+    &::before {
+      position: absolute;
+      content: "";
+      background: url(../images/bg-section-top-desktop-1.svg);
+      height: 165px;
+      width: 100%;
+      top: -8rem;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      background: url(../images/bg-section-bottom-desktop-1.svg);
+      height: 139px;
+      width: 100%;
+      bottom: -8rem;
     }
   }
 
   &__conversations {
     grid-template-areas: "image text";
-    .text {
-      grid-column: 6 / 12;
-    }
+    padding: 16rem 0;
 
     img {
-      grid-column: 2 / 6;
+      grid-column: 2 / 7;
+    }
+
+    .text {
+      grid-column: 8 / 12;
+    }
+  }
+
+  &__users {
+    &::before {
+      position: absolute;
+      content: "";
+      background: url(../images/bg-section-top-desktop-2.svg);
+      height: 156px;
+      width: 100%;
+      top: -8rem;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      background: url(../images/bg-section-bottom-desktop-2.svg);
+      height: 139px;
+      width: 100%;
+      bottom: -8rem;
     }
   }
 }
@@ -125,6 +166,7 @@ header {
   grid-column: 4 / 10;
 
   .signup {
+    padding: 9rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,6 +183,7 @@ footer {
   grid-column: 1/-1;
   color: #ffffff;
   background: $color-cyan;
+  display: flex;
   &__logo {
     filter: grayscale(1) brightness(0) invert(1);
   }
