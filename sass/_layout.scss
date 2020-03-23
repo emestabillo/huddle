@@ -67,25 +67,34 @@ header {
     }
   }
 
+  @media screen and (max-width: 862px) {
+    grid-gap: 5rem;
+  }
+
   @media screen and (min-width: 720px) {
     .messages {
       transform: translateX(-7rem);
     }
   }
-  @media screen and (max-width: 862px) {
-    grid-gap: 5rem;
-  }
 }
 
 .people {
   grid-column: 1 / -1;
-  padding: 8rem 0;
+  padding: 7rem 0;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
   .text {
     grid-area: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      font-size: smaller;
+      padding-top: 1.5rem;
+    }
   }
 
   img {
@@ -114,7 +123,7 @@ header {
     &::before {
       position: absolute;
       content: "";
-      background: url(../images/bg-section-top-desktop-1.svg);
+      background: url(../images/bg-section-top-desktop-1.svg) no-repeat;
       height: 165px;
       width: 100%;
       top: -8rem;
@@ -122,7 +131,7 @@ header {
     &::after {
       position: absolute;
       content: "";
-      background: url(../images/bg-section-bottom-desktop-1.svg);
+      background: url(../images/bg-section-bottom-desktop-1.svg) no-repeat;
       height: 139px;
       width: 100%;
       bottom: -8rem;
@@ -146,7 +155,7 @@ header {
     &::before {
       position: absolute;
       content: "";
-      background: url(../images/bg-section-top-desktop-2.svg);
+      background: url(../images/bg-section-top-desktop-2.svg) no-repeat;
       height: 156px;
       width: 100%;
       top: -8rem;
@@ -154,7 +163,7 @@ header {
     &::after {
       position: absolute;
       content: "";
-      background: url(../images/bg-section-bottom-desktop-2.svg);
+      background: url(../images/bg-section-bottom-desktop-2.svg) no-repeat;
       height: 139px;
       width: 100%;
       bottom: -8rem;
@@ -163,14 +172,15 @@ header {
 }
 
 .action {
-  grid-column: 4 / 10;
+  grid-column: 1 / -1;
 
   .signup {
-    padding: 9rem 0;
+    padding: 7rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 70%;
 
     h1 {
       font-size: 2rem;
@@ -179,15 +189,68 @@ header {
   }
 }
 
-footer {
+.footer {
   grid-column: 1/-1;
   color: #ffffff;
   background: $color-cyan;
-  display: flex;
-  &__logo {
-    filter: grayscale(1) brightness(0) invert(1);
+  // padding: 100px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../images/bg-footer-top-desktop.svg) no-repeat;
+    height: 158px;
+    width: 100%;
+    top: -9.5rem;
+  }
+
+  &__container {
+    // display: grid;
+    padding-top: 4rem;
+    padding-right: 100px;
+    padding-left: 118px;
+    // // grid-template-columns: repeat(12, 1fr);
+    // grid-template-areas: "contact . newsletter";
+    // grid-template-columns: 1fr 12rem 1fr;
+
+    display: flex;
+    // flex-wrap: wrap;
   }
 }
+.left-panel {
+  // grid-column: 2 / 6;
+  // grid-area: contact;
+  // padding-top: 3rem;
+  display: grid;
+  // grid-template-rows: ;
+
+  &__logo {
+    display: flex;
+
+    img {
+      filter: grayscale(1) brightness(0) invert(1);
+      height: 2rem; //38.4px
+      padding-top: 0.42rem;
+      padding-right: 0.3rem;
+    }
+  }
+  p {
+    font-size: smaller;
+  }
+  &__contact {
+    font-size: smaller;
+
+    .info {
+      display: flex;
+    }
+  }
+}
+// &__right {
+//   // grid-column: 7 / 11;
+//   grid-area: newsletter;
+//   // padding-top: 3rem;
+// }
 
 // .attribution {
 //   font-size: 11px;
