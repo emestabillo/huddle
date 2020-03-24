@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 120%; }
+  font-size: 100%; }
 
 .container {
   display: grid;
@@ -188,17 +188,24 @@ header {
     display: flex; }
 
 .left-panel {
-  display: grid; }
+  display: grid;
+  grid-template-rows: 3rem 4rem 5rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: 18rem; }
   .left-panel__logo {
     display: flex; }
     .left-panel__logo img {
       filter: grayscale(1) brightness(0) invert(1);
-      height: 2rem;
+      height: 2.3rem;
       padding-top: 0.42rem;
       padding-right: 0.3rem; }
+    .left-panel__logo .name {
+      font-size: 2rem;
+      font-weight: 800; }
   .left-panel p {
     font-size: smaller; }
-  .left-panel__contact {
-    font-size: smaller; }
-    .left-panel__contact .info {
-      display: flex; }
+  .left-panel__contact .info {
+    display: flex;
+    padding-bottom: 1.2rem; }
+    .left-panel__contact .info img {
+      padding-right: 1rem; }

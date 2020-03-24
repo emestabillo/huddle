@@ -218,31 +218,49 @@ header {
     // flex-wrap: wrap;
   }
 }
+
 .left-panel {
   // grid-column: 2 / 6;
   // grid-area: contact;
   // padding-top: 3rem;
   display: grid;
-  // grid-template-rows: ;
+  grid-template-rows: 3rem 4rem 5rem;
+  grid-row-gap: 1rem;
+  // grid-template-rows: auto;
+  grid-template-columns: 18rem;
 
   &__logo {
     display: flex;
 
     img {
       filter: grayscale(1) brightness(0) invert(1);
-      height: 2rem; //38.4px
+      height: 2.3rem; //38.4px
       padding-top: 0.42rem;
       padding-right: 0.3rem;
     }
+    .name {
+      font-size: 2rem;
+      font-weight: 800;
+    }
   }
+
   p {
     font-size: smaller;
   }
+
   &__contact {
-    font-size: smaller;
+    // font-size: 1rem;
 
     .info {
       display: flex;
+      padding-bottom: 1.2rem;
+
+      img {
+        padding-right: 1rem;
+      }
+
+      p {
+      }
     }
   }
 }
