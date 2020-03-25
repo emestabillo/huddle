@@ -20,21 +20,24 @@ body {
 
 .cta {
   border-radius: 2.5rem;
-  box-shadow: 0px 3px 15px rgba(255, 82, 186, 0.2);
   border: 1px solid #ff52bf; }
   .cta--header {
+    box-shadow: 3px 3px 15px rgba(255, 82, 186, 0.2);
     padding: 0.5rem 2rem;
     background: #fff;
     color: #ff52bf;
     border: 1px solid #ff52bf; }
   .cta--banner {
+    box-shadow: 0px 12px 15px rgba(255, 82, 186, 0.2);
     color: #fff;
     background: #ff52bf;
     padding: 0.5rem 2rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     width: 20rem;
     height: 3.8rem;
-    justify-self: center; }
+    justify-self: center;
+    letter-spacing: 1px; }
 
 header {
   grid-column: 2 / span 10;
@@ -104,6 +107,9 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+    .people .text h2 {
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 1px; }
     .people .text p {
       font-size: smaller;
       padding-top: 1.5rem; }
@@ -166,8 +172,9 @@ header {
     justify-content: center;
     height: 70%; }
     .action .signup h1 {
-      font-size: 2rem;
-      padding-bottom: 2.5rem; }
+      font-family: "Poppins", sans-serif;
+      font-size: 2.2rem;
+      padding-bottom: 2rem; }
 
 .footer {
   grid-column: 1/-1;
@@ -186,12 +193,16 @@ header {
     padding-right: 100px;
     padding-left: 118px;
     display: flex; }
+  .footer__right {
+    display: grid;
+    grid-template-rows: 3rem 4rem 4rem; }
 
 .left-panel {
   display: grid;
   grid-template-rows: 3rem 4rem 5rem;
   grid-row-gap: 1rem;
-  grid-template-columns: 18rem; }
+  grid-template-columns: 18rem;
+  padding-right: 8rem; }
   .left-panel__logo {
     display: flex; }
     .left-panel__logo img {
@@ -200,7 +211,7 @@ header {
       padding-top: 0.42rem;
       padding-right: 0.3rem; }
     .left-panel__logo .name {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 800; }
   .left-panel p {
     font-size: smaller; }
