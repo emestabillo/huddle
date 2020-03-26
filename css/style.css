@@ -7,10 +7,12 @@
 
 html {
   box-sizing: border-box; }
+  @media screen and (max-width: 704px) {
+    html {
+      font-size: 80%; } }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 100%; }
+  font-family: "Open Sans", sans-serif; }
 
 .container {
   display: grid;
@@ -21,23 +23,29 @@ body {
 .cta {
   border-radius: 2.5rem;
   border: 1px solid #ff52bf; }
+  .cta--header, .cta--banner {
+    padding: 0.5rem 2rem; }
   .cta--header {
     box-shadow: 3px 3px 15px rgba(255, 82, 186, 0.2);
-    padding: 0.5rem 2rem;
     background: #fff;
     color: #ff52bf;
     border: 1px solid #ff52bf; }
-  .cta--banner {
+  .cta--banner, .cta--footer {
     box-shadow: 0px 12px 15px rgba(255, 82, 186, 0.2);
     color: #fff;
     background: #ff52bf;
-    padding: 0.5rem 2rem;
-    font-size: 0.9rem;
     font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.9rem; }
+  .cta--banner {
     width: 20rem;
     height: 3.8rem;
-    justify-self: center;
-    letter-spacing: 1px; }
+    justify-self: center; }
+  .cta--footer {
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    margin-left: 1.2rem; }
 
 header {
   grid-column: 2 / span 10;
@@ -90,16 +98,15 @@ header {
       font-size: 4rem; }
     .stats__info p {
       text-align: center; }
-  @media screen and (max-width: 862px) {
+  @media screen and (max-width: 719px) {
     .stats {
-      grid-gap: 5rem; } }
-  @media screen and (min-width: 720px) {
+      grid-gap: 2rem; } }
+  @media screen and (min-width: 995px) {
     .stats .messages {
       transform: translateX(-7rem); } }
 
 .people {
   grid-column: 1 / -1;
-  padding: 7rem 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr); }
   .people .text {
@@ -119,6 +126,7 @@ header {
     object-fit: contain;
     grid-area: image; }
   .people__grow, .people__users {
+    padding: 7rem 0;
     background: #f5faff;
     grid-template-areas: "text image";
     position: relative; }
@@ -133,6 +141,11 @@ header {
     height: 165px;
     width: 100%;
     top: -8rem; }
+    @media screen and (max-width: 375px) {
+      .people__grow::before {
+        background: url(../images/bg-section-top-mobile-1.svg) no-repeat;
+        height: 112px;
+        width: 100%; } }
   .people__grow::after {
     position: absolute;
     content: "";
@@ -188,35 +201,47 @@ header {
     height: 158px;
     width: 100%;
     top: -9.5rem; }
+  .footer p {
+    font-size: smaller; }
   .footer__container {
     padding-top: 4rem;
-    padding-right: 100px;
-    padding-left: 118px;
-    display: flex; }
-  .footer__right {
     display: grid;
-    grid-template-rows: 3rem 4rem 4rem; }
-
-.left-panel {
-  display: grid;
-  grid-template-rows: 3rem 4rem 5rem;
-  grid-row-gap: 1rem;
-  grid-template-columns: 18rem;
-  padding-right: 8rem; }
-  .left-panel__logo {
-    display: flex; }
-    .left-panel__logo img {
-      filter: grayscale(1) brightness(0) invert(1);
-      height: 2.3rem;
-      padding-top: 0.42rem;
-      padding-right: 0.3rem; }
-    .left-panel__logo .name {
-      font-size: 2.2rem;
-      font-weight: 800; }
-  .left-panel p {
-    font-size: smaller; }
-  .left-panel__contact .info {
-    display: flex;
-    padding-bottom: 1.2rem; }
-    .left-panel__contact .info img {
-      padding-right: 1rem; }
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: ". left left left . . right right right right right right"; }
+  .footer__left {
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 3rem 4rem 5rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: 18rem; }
+    .footer__left .logo {
+      display: flex; }
+      .footer__left .logo img {
+        filter: grayscale(1) brightness(0) invert(1);
+        height: 2.3rem;
+        padding-top: 0.42rem;
+        padding-right: 0.3rem; }
+      .footer__left .logo__name {
+        font-size: 2.2rem;
+        font-weight: 800; }
+    .footer__left .contact__info {
+      display: flex;
+      padding-bottom: 1.2rem; }
+      .footer__left .contact__info img {
+        padding-right: 1rem; }
+  .footer__right {
+    grid-area: right;
+    display: grid;
+    grid-template-rows: 3rem 4rem 4rem;
+    grid-row-gap: 1rem; }
+    .footer__right p {
+      width: 20rem; }
+    .footer__right form {
+      display: flex; }
+      .footer__right form input[type="email"] {
+        width: 26vw;
+        height: 2.5rem;
+        border-radius: 5px;
+        border: none;
+        padding: 3px 1rem;
+        font-size: 1rem; }

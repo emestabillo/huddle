@@ -59,6 +59,7 @@ header {
     grid-template-rows: 2rem 5rem 2rem;
     grid-gap: 1rem;
     justify-self: center;
+
     h1 {
       font-size: 4rem;
     }
@@ -67,11 +68,11 @@ header {
     }
   }
 
-  @media screen and (max-width: 862px) {
-    grid-gap: 5rem;
+  @media screen and (max-width: 719px) {
+    grid-gap: 2rem;
   }
 
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 995px) {
     .messages {
       transform: translateX(-7rem);
     }
@@ -80,7 +81,7 @@ header {
 
 .people {
   grid-column: 1 / -1;
-  padding: 7rem 0;
+  // padding: 7rem 0;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -111,6 +112,7 @@ header {
 
   &__grow,
   &__users {
+    padding: 7rem 0;
     background: $color-paleblue;
     grid-template-areas: "text image";
     position: relative;
@@ -132,6 +134,11 @@ header {
       height: 165px;
       width: 100%;
       top: -8rem;
+      @media screen and (max-width: 375px) {
+        background: url(../images/bg-section-top-mobile-1.svg) no-repeat;
+        height: 112px;
+        width: 100%;
+      }
     }
     &::after {
       position: absolute;
@@ -210,57 +217,72 @@ header {
     top: -9.5rem;
   }
 
-  &__container {
-    padding-top: 4rem;
-    padding-right: 100px;
-    padding-left: 118px;
-
-    display: flex;
-    // flex-wrap: wrap;
-  }
-
-  &__right {
-    display: grid;
-    grid-template-rows: 3rem 4rem 4rem;
-  }
-}
-
-.left-panel {
-  display: grid;
-  grid-template-rows: 3rem 4rem 5rem;
-  grid-row-gap: 1rem;
-  grid-template-columns: 18rem;
-  padding-right: 8rem;
-
-  &__logo {
-    display: flex;
-
-    img {
-      filter: grayscale(1) brightness(0) invert(1);
-      height: 2.3rem; //38.4px
-      padding-top: 0.42rem;
-      padding-right: 0.3rem;
-    }
-    .name {
-      font-size: 2.2rem;
-      font-weight: 800;
-    }
-  }
-
   p {
     font-size: smaller;
   }
 
-  &__contact {
-    .info {
+  &__container {
+    padding-top: 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: ". left left left . . right right right right right right";
+  }
+
+  &__left {
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 3rem 4rem 5rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: 18rem;
+
+    .logo {
       display: flex;
-      padding-bottom: 1.2rem;
 
       img {
-        padding-right: 1rem;
+        filter: grayscale(1) brightness(0) invert(1);
+        height: 2.3rem; //38.4px
+        padding-top: 0.42rem;
+        padding-right: 0.3rem;
       }
 
-      p {
+      &__name {
+        font-size: 2.2rem;
+        font-weight: 800;
+      }
+    }
+
+    .contact {
+      &__info {
+        display: flex;
+        padding-bottom: 1.2rem;
+
+        img {
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+
+  &__right {
+    grid-area: right;
+    display: grid;
+    grid-template-rows: 3rem 4rem 4rem;
+    grid-row-gap: 1rem;
+
+    p {
+      width: 20rem;
+    }
+
+    form {
+      display: flex;
+      input[type="email"] {
+        width: 26vw;
+        height: 2.5rem;
+        border-radius: 5px;
+        border: none;
+        padding: 3px 1rem;
+        font-size: 1rem;
       }
     }
   }

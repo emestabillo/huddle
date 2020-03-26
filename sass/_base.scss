@@ -22,11 +22,13 @@ $bp-desktop: 1440px;
 
 html {
   box-sizing: border-box;
+  @media screen and (max-width: 704px) {
+    font-size: 80%;
+  }
 }
 
 body {
   font-family: $font-body;
-  font-size: 100%; //120%; //19.2px = 1rem
 }
 
 .container {
@@ -34,29 +36,51 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 7rem 33rem min-content 20rem 156rem 38rem 25rem;
   min-width: 100%;
+
+  //   @media screen and (max-width: 671px) {
+  //   grid-template-rows: 7rem 33rem min-content 20rem 156rem 38rem 25rem;
+  // }
 }
 
 .cta {
   border-radius: 2.5rem;
   border: 1px solid $color-primary;
+
+  &--header,
+  &--banner {
+    padding: 0.5rem 2rem;
+  }
+
   &--header {
     box-shadow: 3px 3px 15px rgba(255, 82, 186, 0.2);
-    padding: 0.5rem 2rem;
     background: $color-white;
     color: $color-primary;
     border: 1px solid $color-primary;
   }
-  &--banner {
+
+  &--banner,
+  &--footer {
     box-shadow: 0px 12px 15px rgba(255, 82, 186, 0.2);
     color: $color-white;
     background: $color-primary;
-    padding: 0.5rem 2rem;
-    font-size: 0.9rem;
     font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
 
+  &--banner {
     width: 20rem;
     height: 3.8rem;
     justify-self: center;
-    letter-spacing: 1px;
+  }
+
+  &--footer {
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    margin-left: 1.2rem;
+    // @media screen and (max-width: 1084px){
+
+    // }
   }
 }
