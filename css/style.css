@@ -17,8 +17,11 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 20rem 156rem 38rem 25rem;
+  grid-template-rows: 7rem 33rem min-content 25rem 156rem 38rem 25rem;
   min-width: 100%; }
+  @media screen and (max-width: 537px) {
+    .container {
+      grid-template-rows: 7rem 33rem min-content 33rem 156rem 38rem 25rem; } }
 
 .cta {
   border-radius: 2.5rem;
@@ -88,7 +91,8 @@ header {
 .stats {
   grid-column: 1/-1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: max-content; }
   .stats__info {
     display: grid;
     grid-template-rows: 2rem 5rem 2rem;
@@ -106,9 +110,7 @@ header {
       transform: translateX(-7rem); } }
 
 .people {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr); }
+  grid-column: 1 / -1; }
   .people .text {
     grid-area: text;
     display: flex;
@@ -126,9 +128,9 @@ header {
     object-fit: contain;
     grid-area: image; }
   .people__grow, .people__users {
-    padding: 7rem 0;
-    background: #f5faff;
-    grid-template-areas: "text image";
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    background: #00a6ff;
     position: relative; }
     .people__grow .text, .people__users .text {
       grid-column: 2 / 7; }
@@ -141,6 +143,9 @@ header {
     height: 165px;
     width: 100%;
     top: -8rem; }
+    @media screen and (max-width: 740px) {
+      .people__grow::before {
+        top: -10.1rem; } }
     @media screen and (max-width: 375px) {
       .people__grow::before {
         background: url(../images/bg-section-top-mobile-1.svg) no-repeat;
@@ -167,6 +172,9 @@ header {
     height: 156px;
     width: 100%;
     top: -8rem; }
+    @media screen and (max-width: 740px) {
+      .people__users::before {
+        top: -10.8rem; } }
   .people__users::after {
     position: absolute;
     content: "";
@@ -174,6 +182,9 @@ header {
     height: 139px;
     width: 100%;
     bottom: -8rem; }
+    @media screen and (max-width: 740px) {
+      .people__users::after {
+        bottom: -9.4rem; } }
 
 .action {
   grid-column: 1 / -1; }
