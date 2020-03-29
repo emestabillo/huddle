@@ -17,7 +17,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 25rem 156rem 38rem 25rem;
+  grid-template-rows: 7rem 33rem min-content 25rem 145rem 38rem 25rem;
   min-width: 100%; }
   @media screen and (max-width: 537px) {
     .container {
@@ -26,6 +26,8 @@ body {
 .cta {
   border-radius: 2.5rem;
   border: 1px solid #ff52bf; }
+  .cta:hover {
+    cursor: pointer; }
   .cta--header, .cta--banner {
     padding: 0.5rem 2rem; }
   .cta--header {
@@ -33,6 +35,9 @@ body {
     background: #fff;
     color: #ff52bf;
     border: 1px solid #ff52bf; }
+    .cta--header:hover {
+      background: #ff52bf;
+      color: #fff; }
   .cta--banner, .cta--footer {
     box-shadow: 0px 12px 15px rgba(255, 82, 186, 0.2);
     color: #fff;
@@ -40,6 +45,9 @@ body {
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 0.9rem; }
+    .cta--banner:hover, .cta--footer:hover {
+      background: #fff;
+      color: #ff52bf; }
   .cta--banner {
     width: 20rem;
     height: 3.8rem;
@@ -102,55 +110,43 @@ header {
       font-size: 4rem; }
     .stats__info p {
       text-align: center; }
-  @media screen and (max-width: 719px) {
-    .stats {
-      grid-gap: 2rem; } }
-  @media screen and (min-width: 995px) {
-    .stats .messages {
-      transform: translateX(-7rem); } }
 
 .people {
   grid-column: 1 / -1; }
-  .people .text {
-    grid-area: text;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-    .people .text h2 {
-      font-family: "Poppins", sans-serif;
-      letter-spacing: 1px; }
-    .people .text p {
-      font-size: smaller;
-      padding-top: 1.5rem; }
-  .people img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    grid-area: image; }
-  .people__grow, .people__users {
+  .people__grow, .people__conversations, .people__users {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    grid-template-areas: ". text image ."; }
+    .people__grow .text, .people__conversations .text, .people__users .text {
+      grid-area: text;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .people__grow .text h2, .people__conversations .text h2, .people__users .text h2 {
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.8rem; }
+      .people__grow .text p, .people__conversations .text p, .people__users .text p {
+        font-size: smaller;
+        padding-top: 1.5rem; }
+    .people__grow img, .people__conversations img, .people__users img {
+      width: 100%;
+      object-fit: contain;
+      grid-area: image; }
+  .people__grow, .people__users {
     background: #00a6ff;
-    position: relative; }
+    position: relative;
+    padding: 8rem 0;
+    background: #f5faff; }
     .people__grow .text, .people__users .text {
-      grid-column: 2 / 7; }
-    .people__grow img, .people__users img {
-      grid-column: 8 / 12; }
+      padding-right: 5rem; }
   .people__grow::before {
     position: absolute;
     content: "";
     background: url(../images/bg-section-top-desktop-1.svg) no-repeat;
     height: 165px;
     width: 100%;
-    top: -8rem; }
-    @media screen and (max-width: 740px) {
-      .people__grow::before {
-        top: -10.1rem; } }
-    @media screen and (max-width: 375px) {
-      .people__grow::before {
-        background: url(../images/bg-section-top-mobile-1.svg) no-repeat;
-        height: 112px;
-        width: 100%; } }
+    top: -8.2rem; }
   .people__grow::after {
     position: absolute;
     content: "";
@@ -159,22 +155,17 @@ header {
     width: 100%;
     bottom: -8rem; }
   .people__conversations {
-    grid-template-areas: "image text";
+    grid-template-areas: ". image text .";
     padding: 16rem 0; }
-    .people__conversations img {
-      grid-column: 2 / 7; }
     .people__conversations .text {
-      grid-column: 8 / 12; }
+      padding-left: 4rem; }
   .people__users::before {
     position: absolute;
     content: "";
     background: url(../images/bg-section-top-desktop-2.svg) no-repeat;
     height: 156px;
     width: 100%;
-    top: -8rem; }
-    @media screen and (max-width: 740px) {
-      .people__users::before {
-        top: -10.8rem; } }
+    top: -8.2rem; }
   .people__users::after {
     position: absolute;
     content: "";
@@ -182,9 +173,6 @@ header {
     height: 139px;
     width: 100%;
     bottom: -8rem; }
-    @media screen and (max-width: 740px) {
-      .people__users::after {
-        bottom: -9.4rem; } }
 
 .action {
   grid-column: 1 / -1; }
@@ -218,7 +206,7 @@ header {
     padding-top: 4rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-areas: ". left left left . . right right right right right right"; }
+    grid-template-areas: ". left left left . . right right right right right ."; }
   .footer__left {
     grid-area: left;
     display: grid;
@@ -239,7 +227,35 @@ header {
       display: flex;
       padding-bottom: 1.2rem; }
       .footer__left .contact__info img {
+        padding-right: 1rem;
+        height: 0.9rem; }
+      .footer__left .contact__info a {
+        position: relative;
+        text-decoration: none;
+        color: #fff; }
+        .footer__left .contact__info a::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: -3px;
+          left: 0;
+          background-color: #fff;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out 0s; }
+        .footer__left .contact__info a:hover::before {
+          visibility: visible;
+          transform: scaleX(1); }
+      .footer__left .contact__info .phone {
+        width: 2.1rem; }
+    .footer__left .social {
+      font-size: 1.6rem; }
+      .footer__left .social .fab {
         padding-right: 1rem; }
+        .footer__left .social .fab:hover {
+          cursor: pointer;
+          transform: scale(1.3, 1.3); }
   .footer__right {
     grid-area: right;
     display: grid;
@@ -248,7 +264,8 @@ header {
     .footer__right p {
       width: 20rem; }
     .footer__right form {
-      display: flex; }
+      display: flex;
+      padding-top: 0.5rem; }
       .footer__right form input[type="email"] {
         width: 26vw;
         height: 2.5rem;
