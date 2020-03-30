@@ -30,6 +30,10 @@ header {
     padding: 0 2rem;
     font-family: $font-body;
     font-weight: 400;
+
+    @media screen and (max-width: 666px) {
+      grid-column: 1 / -1;
+    }
   }
 
   .cta {
@@ -54,6 +58,11 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-template-rows: max-content;
+
+  @media screen and (max-width: 512px) {
+    grid-row-gap: 5rem;
+  }
+
   &__info {
     display: grid;
     grid-template-rows: 2rem 5rem 2rem;
@@ -67,16 +76,6 @@ header {
       text-align: center;
     }
   }
-
-  // @media screen and (max-width: 719px) {
-  //   grid-gap: 2rem;
-  // }
-
-  // @media screen and (min-width: 995px) {
-  //   .messages {
-  //     transform: translateX(-7rem);
-  //   }
-  // }
 }
 
 .people {
@@ -85,15 +84,22 @@ header {
   &__grow,
   &__conversations,
   &__users {
-    display: grid;
-    grid-template-columns: 1fr 5fr 5fr 1fr;
-    grid-template-areas: ". text image .";
+    display: flex;
+
+    @media screen and (max-width: 573px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     .text {
-      grid-area: text;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @media screen and (max-width: 573px) {
+        justify-content: center;
+        align-items: center;
+      }
 
       h2 {
         font-family: $font-heading;
@@ -104,23 +110,38 @@ header {
       p {
         font-size: smaller;
         padding-top: 1.5rem;
+
+        @media screen and (max-width: 573px) {
+          padding: 2rem 3rem;
+          text-align: center;
+        }
       }
     }
 
     img {
-      width: 100%;
-      object-fit: contain;
-      grid-area: image;
+      // width: 50%;
+      max-width: 50vw;
+      // max-width: 100%;
+      height: auto;
+      // object-fit: contain;
+      // grid-area: image;
+
+      @media screen and (max-width: 375px) {
+        padding-bottom: 3rem;
+      }
     }
   }
   &__grow,
   &__users {
     background: rgb(0, 166, 255);
     position: relative;
-    padding: 8rem 0;
+    padding: 8rem 10vw;
     background: $color-paleblue;
-    .text {
-      padding-right: 5rem;
+    // background-color: blue($color: blue);
+    @media screen and (min-width: 574px) {
+      .text {
+        padding-right: 5rem;
+      }
     }
   }
 
@@ -132,15 +153,18 @@ header {
       height: 165px;
       width: 100%;
       top: -8.2rem;
+      left: 0;
 
-      // @media screen and (max-width: 740px) {
-      //   top: -10.1rem;
-      // }
-      // @media screen and (max-width: 375px) {
-      //   background: url(../images/bg-section-top-mobile-1.svg) no-repeat;
-      //   height: 112px;
-      //   width: 100%;
-      // }
+      @media screen and (max-width: 709px) {
+        top: -10.8rem;
+      }
+
+      @media screen and (max-width: 375px) {
+        background: url(../images/bg-section-top-mobile-1.svg) no-repeat;
+        height: 112px;
+        width: 100%;
+        top: -7.7rem;
+      }
     }
 
     &::after {
@@ -150,15 +174,28 @@ header {
       height: 139px;
       width: 100%;
       bottom: -8rem;
+      left: 0;
+
+      @media screen and (max-width: 709px) {
+        bottom: -9.4rem;
+      }
+
+      @media screen and (max-width: 375px) {
+        background: url(../images/bg-section-bottom-mobile-1.svg) no-repeat;
+        height: 112px;
+        width: 100%;
+        bottom: -8.7rem;
+      }
     }
   }
 
   &__conversations {
-    grid-template-areas: ". image text .";
-    padding: 16rem 0;
+    padding: 16rem 10vw;
 
-    .text {
-      padding-left: 4rem;
+    @media screen and (min-width: 574px) {
+      .text {
+        padding-left: 4rem;
+      }
     }
   }
 
@@ -170,21 +207,37 @@ header {
       height: 156px;
       width: 100%;
       top: -8.2rem;
-      // @media screen and (max-width: 740px) {
-      //   top: -10.8rem;
-      // }
+      left: 0;
+
+      @media screen and (max-width: 709px) {
+        top: -10.8rem;
+      }
+
+      @media screen and (max-width: 375px) {
+        background: url(../images/bg-section-top-mobile-2.svg) no-repeat;
+        height: 101px;
+        top: -7.9rem;
+      }
     }
 
     &::after {
-      position: absolute;
       content: "";
+      position: absolute;
       background: url(../images/bg-section-bottom-desktop-2.svg) no-repeat;
       height: 139px;
       width: 100%;
       bottom: -8rem;
-      // @media screen and (max-width: 740px) {
-      //   bottom: -8rem;
-      // }
+      left: 0;
+
+      @media screen and (max-width: 709px) {
+        bottom: -9.4rem;
+      }
+
+      @media screen and (max-width: 375px) {
+        background: url(../images/bg-section-bottom-mobile-2.svg) no-repeat;
+        height: 101px;
+        bottom: -7.9rem;
+      }
     }
   }
 }
@@ -192,19 +245,19 @@ header {
 .action {
   grid-column: 1 / -1;
 
-  .signup {
-    padding: 7rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    h1 {
-      font-family: $font-heading;
-      font-size: 2.2rem;
-      padding-bottom: 2rem;
-    }
+  h1 {
+    font-family: $font-heading;
+    font-size: 2.2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 536px) {
+    padding: 0 3rem;
+    text-align: center;
   }
 }
 
@@ -221,6 +274,12 @@ header {
     height: 158px;
     width: 100%;
     top: -9.5rem;
+
+    @media screen and (max-width: 375px) {
+      background: url(../images/bg-footer-top-mobile.svg) no-repeat;
+      height: 53px;
+      top: -3.3rem;
+    }
   }
 
   p {
@@ -228,10 +287,20 @@ header {
   }
 
   &__container {
+    font-size: 1.3rem;
     padding-top: 4rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: ". left left left . . right right right right right .";
+    @media screen and (max-width: 573px) {
+      grid-template-areas:
+        "right"
+        "left";
+      padding: 10vw;
+      grid-row-gap: 3rem;
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr;
+    }
   }
 
   &__left {
@@ -239,7 +308,10 @@ header {
     display: grid;
     grid-template-rows: 3rem 4rem 5rem;
     grid-row-gap: 1rem;
-    grid-template-columns: 18rem;
+
+    @media screen and (min-width: 574px) {
+      grid-template-columns: 18rem;
+    }
 
     .logo {
       display: flex;
@@ -319,11 +391,20 @@ header {
 
     p {
       width: 20rem;
+      @media screen and (max-width: 573px) {
+        width: 80vw;
+        font-size: 1rem;
+      }
     }
 
     form {
       display: flex;
       padding-top: 0.5rem;
+      @media screen and (max-width: 573px) {
+        flex-direction: column;
+        height: 8rem;
+        padding: 0;
+      }
 
       input[type="email"] {
         width: 26vw;
@@ -332,6 +413,11 @@ header {
         border: none;
         padding: 3px 1rem;
         font-size: 1rem;
+
+        @media screen and (max-width: 573px) {
+          width: 80vw;
+          height: 3rem;
+        }
       }
     }
   }
