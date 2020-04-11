@@ -15,25 +15,8 @@ body {
   font-family: "Open Sans", sans-serif; }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 25rem 158rem 30rem 35rem;
-  min-width: 100%; }
-  @media screen and (max-width: 1234px) {
-    .container {
-      grid-template-rows: 7rem 33rem min-content 25rem 148rem 38rem 25rem; } }
-  @media screen and (max-width: 885px) {
-    .container {
-      grid-template-rows: 7rem 33rem min-content 25rem 128rem 28rem 25rem; } }
-  @media screen and (max-width: 573px) {
-    .container {
-      grid-template-rows: 7rem 33rem min-content 25rem 162rem 28rem 45rem; } }
-  @media screen and (max-width: 512px) {
-    .container {
-      grid-template-rows: 7rem 33rem max-content 42rem 162rem 28rem 45rem; } }
-  @media screen and (max-width: 375px) {
-    .container {
-      grid-template-rows: 7rem 33rem min-content 35rem 150rem 26rem 45rem; } }
+  min-width: 100%;
+  padding: 0 8vw; }
 
 .cta {
   border-radius: 2.5rem;
@@ -76,81 +59,62 @@ body {
         height: 3rem;
         width: 40vw; } }
 
+.images {
+  height: 100%;
+  width: 100%; }
+
 header {
-  grid-column: 2 / span 10;
   padding: 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center; }
   header img {
-    height: 2rem; }
+    height: 1.5rem; }
 
 .banner {
-  grid-column: 3 / span 8;
   text-align: center;
-  padding-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(3, min-content);
-  grid-row-gap: 2.5rem; }
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   .banner__title {
-    grid-column: 1 / -1;
     font-size: 2rem;
+    font-family: "Poppins", sans-serif;
     padding-top: 2.5rem; }
   .banner__subtitle {
-    grid-column: 2 / span 5;
-    padding: 0 2rem;
+    padding: 4rem 0.5rem;
     font-family: "Open Sans", sans-serif;
-    font-weight: 400; }
-    @media screen and (max-width: 666px) {
-      .banner__subtitle {
-        grid-column: 1 / -1; } }
-  .banner .cta {
-    grid-column: 3 / span 3; }
-
-.images {
-  height: 100%;
-  width: 100%;
-  object-fit: cover; }
+    font-size: 1.1rem; }
 
 .screen-img {
-  grid-column: 3 / span 8;
-  padding-bottom: 8rem; }
+  padding: 6rem 0 10rem; }
 
 .stats {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-template-rows: max-content; }
-  @media screen and (max-width: 512px) {
-    .stats {
-      grid-row-gap: 5rem; } }
-  .stats__info {
-    display: grid;
-    grid-template-rows: 2rem 5rem 2rem;
-    grid-gap: 1rem;
-    justify-self: center; }
-    .stats__info h1 {
-      font-size: 4rem; }
-    .stats__info p {
-      text-align: center; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30vh; }
+  .stats__info:first-child {
+    padding-bottom: 5rem; }
+  .stats__info img {
+    width: 35px;
+    height: 28px; }
+  .stats__info h1 {
+    font-size: 4.5rem; }
+  .stats__info p {
+    text-align: center; }
 
 .people {
-  grid-column: 1 / -1; }
+  margin: 0 -8vw; }
   .people__grow, .people__conversations, .people__users {
-    display: flex; }
-    @media screen and (max-width: 573px) {
-      .people__grow, .people__conversations, .people__users {
-        flex-direction: column;
-        align-items: center; } }
+    display: flex;
+    flex-direction: column; }
     .people__grow .text, .people__conversations .text, .people__users .text {
       display: flex;
       flex-direction: column;
       justify-content: center; }
-      @media screen and (max-width: 573px) {
-        .people__grow .text, .people__conversations .text, .people__users .text {
-          justify-content: center;
-          align-items: center; } }
       .people__grow .text h2, .people__conversations .text h2, .people__users .text h2 {
         font-family: "Poppins", sans-serif;
         letter-spacing: 1px;
@@ -158,10 +122,6 @@ header {
       .people__grow .text p, .people__conversations .text p, .people__users .text p {
         font-size: smaller;
         padding-top: 1.5rem; }
-        @media screen and (max-width: 573px) {
-          .people__grow .text p, .people__conversations .text p, .people__users .text p {
-            padding: 2rem 3rem;
-            text-align: center; } }
     .people__grow img, .people__conversations img, .people__users img {
       max-width: 50vw;
       height: auto; }

@@ -1,76 +1,90 @@
 header {
-  grid-column: 2 / span 10;
+  // grid-column: 2 / span 10;
   padding: 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   img {
-    height: 2rem;
+    height: 1.5rem;
   }
 }
 
 .banner {
-  grid-column: 3 / span 8;
+  // grid-column: 3 / span 8;
   text-align: center;
-  padding-top: 3rem;
+  padding: 5rem 0;
 
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(3, min-content);
-  grid-row-gap: 2.5rem;
+  // display: grid;
+  // grid-template-columns: repeat(7, 1fr);
+  // grid-template-rows: repeat(3, min-content);
+  // grid-row-gap: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &__title {
-    grid-column: 1 / -1;
+    // grid-column: 1 / -1;
     font-size: 2rem;
+    font-family: $font-heading;
     padding-top: 2.5rem;
+    // padding-bottom: 2rem;
   }
 
   &__subtitle {
-    grid-column: 2 / span 5;
-    padding: 0 2rem;
+    // grid-column: 2 / span 5;
+    padding: 4rem 0.5rem;
     font-family: $font-body;
-    font-weight: 400;
+    font-size: 1.1rem;
 
-    @media screen and (max-width: 666px) {
-      grid-column: 1 / -1;
-    }
+    // @media screen and (max-width: 666px) {
+    //   grid-column: 1 / -1;
+    // }
   }
 
-  .cta {
-    grid-column: 3 / span 3;
-  }
-}
-
-.images {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  // .cta {
+  //   grid-column: 3 / span 3;
+  // }
 }
 
 .screen-img {
-  grid-column: 3 / span 8;
-  padding-bottom: 8rem;
+  // grid-column: 3 / span 8;
+  padding: 6rem 0 10rem;
 }
 
 .stats {
-  grid-column: 1/-1;
+  // grid-column: 1/-1;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-template-rows: max-content;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  // grid-template-rows: max-content;
 
-  @media screen and (max-width: 512px) {
-    grid-row-gap: 5rem;
-  }
+  // @media screen and (max-width: 512px) {
+  //   grid-row-gap: 5rem;
+  // }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30vh;
 
   &__info {
-    display: grid;
-    grid-template-rows: 2rem 5rem 2rem;
-    grid-gap: 1rem;
-    justify-self: center;
+    // display: grid;
+    // grid-template-rows: 2rem 5rem 2rem;
+    // grid-gap: 1rem;
+    // justify-self: center;
+    &:first-child {
+      padding-bottom: 5rem;
+    }
+
+    img {
+      width: 35px;
+      height: 28px;
+    }
 
     h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
     }
     p {
       text-align: center;
@@ -79,27 +93,29 @@ header {
 }
 
 .people {
-  grid-column: 1 / -1;
+  // grid-column: 1 / -1;
+  margin: 0 -8vw;
 
   &__grow,
   &__conversations,
   &__users {
     display: flex;
+    flex-direction: column;
 
-    @media screen and (max-width: 573px) {
-      flex-direction: column;
-      align-items: center;
-    }
+    // @media screen and (max-width: 573px) {
+    //   flex-direction: column;
+    //   align-items: center;
+    // }
 
     .text {
       display: flex;
       flex-direction: column;
       justify-content: center;
 
-      @media screen and (max-width: 573px) {
-        justify-content: center;
-        align-items: center;
-      }
+      // @media screen and (max-width: 573px) {
+      //   justify-content: center;
+      //   align-items: center;
+      // }
 
       h2 {
         font-family: $font-heading;
@@ -111,10 +127,10 @@ header {
         font-size: smaller;
         padding-top: 1.5rem;
 
-        @media screen and (max-width: 573px) {
-          padding: 2rem 3rem;
-          text-align: center;
-        }
+        // @media screen and (max-width: 573px) {
+        //   padding: 2rem 3rem;
+        //   text-align: center;
+        // }
       }
     }
 
