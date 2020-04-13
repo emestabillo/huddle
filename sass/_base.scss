@@ -10,7 +10,8 @@ $font-heading: "Poppins", sans-serif;
 
 // BREAKPOINTS
 $bp-mobile: 375px;
-$bp-desktop: 1440px;
+$bp-medium: 768px;
+$bp-large: 769px;
 
 *,
 *::before,
@@ -22,8 +23,8 @@ $bp-desktop: 1440px;
 
 html {
   box-sizing: border-box;
-  @media screen and (max-width: 709px) {
-    font-size: 80%;
+  @media screen and (max-width: 768px) {
+    font-size: 80%; //12.8px
   }
 }
 
@@ -32,29 +33,7 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 7rem 33rem min-content 25rem 158rem 30rem 35rem;
   min-width: 100%;
-
-  @media screen and (max-width: 1234px) {
-    grid-template-rows: 7rem 33rem min-content 25rem 148rem 38rem 25rem;
-  }
-  @media screen and (max-width: 885px) {
-    grid-template-rows: 7rem 33rem min-content 25rem 128rem 28rem 25rem;
-  }
-
-  @media screen and (max-width: 573px) {
-    grid-template-rows: 7rem 33rem min-content 25rem 162rem 28rem 45rem;
-  }
-
-  @media screen and (max-width: 512px) {
-    grid-template-rows: 7rem 33rem max-content 42rem 162rem 28rem 45rem;
-  }
-
-  @media screen and (max-width: 375px) {
-    grid-template-rows: 7rem 33rem min-content 35rem 150rem 26rem 45rem;
-  }
 }
 
 .cta {
@@ -88,7 +67,7 @@ body {
     background: $color-primary;
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     &:hover {
       background: $color-white;
@@ -103,16 +82,20 @@ body {
   }
 
   &--footer {
-    width: 8rem;
-    height: 2.5rem;
     border-radius: 5px;
-    margin-left: 1.2rem;
+    margin-left: auto;
+    width: 50%;
+    height: 3.5rem;
+    display: block;
 
-    @media screen and (max-width: 573px) {
-      align-self: flex-end;
-      margin-top: 1rem;
+    @media screen and (min-width: $bp-large) {
+      width: 100%;
       height: 3rem;
-      width: 40vw;
     }
   }
+}
+
+.images {
+  max-width: 100%;
+  height: auto;
 }
