@@ -3,8 +3,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: $bp-medium) {
+    padding: 5rem 8vw 3rem;
+  }
+
   img {
     height: 1.5rem;
+    @media screen and (min-width: $bp-medium) {
+      height: 2rem;
+    }
   }
 }
 
@@ -21,12 +29,20 @@ header {
     font-size: 2rem;
     font-family: $font-heading;
     padding-top: 2.5rem;
+
+    @media screen and (min-width: $bp-medium) {
+      font-size: 3rem;
+    }
   }
 
   &__subtitle {
     padding: 4rem 0.5rem;
     font-family: $font-body;
     font-size: 1.1rem;
+
+    @media screen and (min-width: 1200px) {
+      width: 55%;
+    }
   }
 }
 
@@ -214,6 +230,10 @@ header {
       bottom: -8rem;
       left: 0;
 
+      @media screen and (max-width: $bp-medium) {
+        bottom: -9.5rem;
+      }
+
       @media screen and (max-width: $bp-mobile) {
         background: url(../images/bg-section-bottom-mobile-2.svg) no-repeat;
         height: 101px;
@@ -224,8 +244,7 @@ header {
 }
 
 .action {
-  padding: 40vh 10vw;
-
+  padding: 18rem 10vw;
   display: flex;
   flex-direction: column;
   align-items: center;
